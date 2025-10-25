@@ -1,4 +1,4 @@
-/* 🎨 Variáveis de tema */
+/* Variáveis de tema */
 :root {
   --bg: #ffffff;        /* Fundo padrão claro */
   --text: #000000;      /* Texto padrão escuro */
@@ -11,7 +11,7 @@ body.dark-mode {
   --primary: #81C784;   /* Verde claro para modo escuro */
 }
 
-/* 🧱 Estilo base do corpo */
+/* Estilo base do corpo */
 body {
   background-color: var(--bg);
   color: var(--text);
@@ -20,7 +20,7 @@ body {
   padding: 0;
 }
 
-/* 🧭 Cabeçalho e rodapé */
+/* Cabeçalho e rodapé */
 header, footer {
   background-color: var(--primary);
   color: var(--bg);
@@ -28,7 +28,7 @@ header, footer {
   text-align: center;
 }
 
-/* 🧭 Navegação */
+/* Navegação */
 nav ul {
   list-style: none;
   display: flex;
@@ -47,12 +47,12 @@ nav ul li button {
   text-decoration: none;
 }
 
-/* 📄 Conteúdo principal */
+/* Conteúdo principal */
 main {
   padding: 20px;
 }
 
-/* 📋 Formulário */
+/*  Formulário */
 form {
   max-width: 600px;
   margin: auto;
@@ -76,7 +76,7 @@ select {
   margin-top: 5px;
 }
 
-/* 🐶 Seção "Mel me leva pra casa" */
+/* Seção "Mel me leva pra casa" */
 .container-mel {
   display: flex;
   align-items: center;
@@ -98,7 +98,24 @@ select {
   border-radius: 100px;
 }
 
-/* 👋 Seção "Bem-vindo ao site" */
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .container-mel {
+    flex-direction: column;     /* Empilha os elementos verticalmente */
+    gap: 30px;                  /* Reduz o espaçamento */
+  }
+
+  .texto-mel {
+    font-size: 25px;            /* Reduz tamanho da fonte */
+  }
+
+  .img-mel {
+    width: 80%;                 /* Imagem ocupa 80% da largura da tela */
+    border-radius: 50px;        /* Bordas mais suaves em telas pequenas */
+  }
+}
+
+/* Seção "Bem-vindo ao site" */
 .bem-vindo {
   display: flex;
   flex-direction: column;
@@ -130,7 +147,7 @@ select {
   color: var(--primary);
 }
 
-/* 🐾 Seção "Conhecer nosso trabalho" */
+/* Seção "Conhecer nosso trabalho" */
 .conhecer-trabalho {
   background: linear-gradient(to right, #d4edda, #c3e6cb);
   padding: 60px 20px;
@@ -165,7 +182,7 @@ select {
   margin-bottom: 20px;
 }
 
-/* 🔘 Botão padrão */
+/* Botão padrão */
 .btn {
   display: inline-block;
   padding: 12px 20px;
@@ -186,8 +203,8 @@ select {
   max-width: 300px;
 }
 
-/* 🖼️ Galeria de adoção */
-.galeria {
+/* Galeria de adoção */
+.galeria-lar {
   text-align: center;
   padding: 50px 20px;
   background-color: #f9f9f9;
@@ -196,7 +213,7 @@ select {
 .galeria h2 {
   font-size: 32px;
   margin-bottom: 30px;
-  color: #333;
+  color: #218838;
 }
 
 .cards {
@@ -229,26 +246,29 @@ select {
 .card h3 {
   margin: 10px 0;
   font-size: 22px;
-  color: #2c3e50;
+  color: #218838;
 }
 
 .card p {
   font-size: 16px;
-  color: #555;
+  color: #218838;
 }
 
-/* 🌐 Botão da galeria (sobrescreve o anterior) */
+/* Botão da galeria (sobrescreve o anterior) */
 .card .btn {
   margin-top: 10px;
   padding: 10px 15px;
-  background-color: #3498db;
+  background-color: #218838;
 }
 
 .card .btn:hover {
-  background-color: #2980b9;
+  background-color: #218838;
+  transform: scale(1.05);
+  filter: brightness(1.1);
+
 }
 
-/* 📱 Responsividade da galeria */
+/* Responsividade da galeria */
 @media (max-width: 600px) {
   .cards {
     flex-direction: column;
@@ -256,7 +276,7 @@ select {
   }
 }
 
-/* 📲 Redes sociais */
+/* Redes sociais */
 .redes-sociais {
   text-align: center;
   margin: 2em 0;
@@ -285,7 +305,7 @@ select {
   transform: scale(1.2);
 }
 
-/* 📞 Seção de contato */
+/*  Seção de contato */
 .contato {
   align-items: center;     
   justify-content: center; 
@@ -304,7 +324,51 @@ select {
 
 }
 
-/* 🧭 Rolagem suave para âncoras */
+/* Rolagem suave para âncoras */
 html {
   scroll-behavior: smooth;
+}
+
+
+/* GALERIA DA PAGINA PROJETO */
+
+.foto-capivara {
+  width: 300px;              /* Largura fixa */
+  height: auto;              /* Altura proporcional */
+  border-radius: 8px;        /* Cantos arredondados */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra suave */
+  display: block;
+  margin: 20px auto;         /* Centraliza horizontalmente */
+  transition: transform 0.3s;
+&:hover {
+  transform: scale(1.05);
+}
+
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+  gap: 16px; /* Espaço entre as imagens */
+  padding: 20px;
+}
+
+.galeria img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .galeria {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas no tablet */
+  }
+}
+
+@media (max-width: 480px) {
+  .galeria {
+    grid-template-columns: 1fr; /* 1 coluna no celular */
+  }
 }
