@@ -87,5 +87,37 @@
 
   <script src="js/masks.js"></script>
   <script src="js/theme.js"></script>
+  <script>
+  document.querySelector('form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = {
+      nome: document.getElementById('nome').value,
+      email: document.getElementById('email').value,
+      cpf: document.getElementById('cpf').value,
+      telefone: document.getElementById('telefone').value,
+      nascimento: document.getElementById('nascimento').value,
+      endereco: document.getElementById('endereco').value,
+      cep: document.getElementById('cep').value,
+      cidade: document.getElementById('cidade').value,
+      estado: document.getElementById('estado').value
+    };
+
+    try {
+      const response = await fetch('http://localhost:3000/api/cadastro', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await response.json();
+      alert(result.mensagem);
+    } catch (error) {
+      alert('Erro ao enviar cadastro');
+      console.error(error);
+    }
+  });
+</script>
+
 </body>
 </html>

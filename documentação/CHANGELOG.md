@@ -18,3 +18,6 @@
 - primeira versão do site
 
 
+## [v-1.0.1.04] - 2025-10-25
+# Adicionado 
+- javascrip
